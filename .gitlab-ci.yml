@@ -1,0 +1,10 @@
+rspec:
+  script:
+    - cd src
+    - javac de/moritz30/java/keyword/*.java
+    - jar -cvfm lastbuild.jar META-INF/MANIFEST.MF de/moritz30/git/test/*.class
+    - scp -i /root/ovh1 lastbuild.jar root@vps1.moritz30.de:/var/www/packages/keyword/autobuild/$CI_BUILD_ID.jar
+    - ssh -i /root/ovh1 root@vps1.moritz30.de rm /var/www/versions/keyword.txt
+    - cd ../
+    - echo "$CI_BUILD_ID" > actual_version.txt
+    - scp -i /root/ovh1 actual_version.txt root@vps1.moritz30.de:/var/www/versions/keyword.txt
