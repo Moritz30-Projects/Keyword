@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class Main extends JDialog {
-    private JPanel contentPane;
+    private JPanel contentPane = new JPanel();
     private JButton buttonOK;
     private JButton buttonCancel;
 
