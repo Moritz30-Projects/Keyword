@@ -4,6 +4,7 @@ rspec:
     - javac de/moritz30/java/keyword/*.java
     - jar -cvfm lastbuild.jar META-INF/MANIFEST.MF de/moritz30/java/keyword/*.class
     - scp -i /root/ovh1 lastbuild.jar root@vps1.moritz30.de:/var/www/packages/keyword/autobuild/$CI_BUILD_ID.jar
+    - ssh -i /root/ovh1 root@vps1.moritz30.de chmod +x /var/www/packages/keyword/autobuild/$CI_BUILD_ID.jar
     - ssh -i /root/ovh1 root@vps1.moritz30.de rm /var/www/versions/keyword.txt
     - cd ../
     - echo "$CI_BUILD_ID" > actual_version.txt
