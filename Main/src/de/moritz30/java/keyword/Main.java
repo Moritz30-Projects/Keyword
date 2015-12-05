@@ -5,8 +5,8 @@ import java.awt.event.*;
 
 public class Main extends JDialog {
     private JPanel contentPane = new JPanel();
-    private JButton buttonOK;
-    private JButton buttonCancel;
+    private JButton buttonOK = new JButton();
+    private JButton buttonCancel = new JButton();
 
     public Main() {
         setContentPane(contentPane);
