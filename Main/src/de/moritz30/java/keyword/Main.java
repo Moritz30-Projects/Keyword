@@ -3,12 +3,12 @@ package de.moritz30.java.keyword;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class MainDialog extends JDialog {
+public class Main extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
 
-    public MainDialog() {
+    public Main() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -52,7 +52,7 @@ public class MainDialog extends JDialog {
     }
 
     public static void main(String[] args) {
-        MainDialog dialog = new MainDialog();
+        Main dialog = new Main();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
